@@ -45,7 +45,6 @@ values."
          flycheck-gometalinter-enable-linters '("vet" "gotype"))
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode)
-     ;;c++-rtags
      irony
      rtags
      osx
@@ -338,6 +337,10 @@ you should place your code here."
   (add-hook 'post-command-hook 'clean-aindent--check-last-point)
   ;; end of issue 6520
   (setq create-lockfiles nil)
+  (set-frame-parameter nil 'background-mode 'dark)
+  (set-terminal-parameter nil 'background-mode 'dark)
+  (spacemacs/load-theme 'solarized)
+  (add-to-list 'auto-mode-alist '("\\.slide\\'" . org-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
