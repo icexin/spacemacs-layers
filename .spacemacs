@@ -318,6 +318,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
                 (set-frame-parameter frame 'background-mode mode)
                 (set-terminal-parameter frame 'background-mode mode)
                 (spacemacs/load-theme 'solarized))))
+  (setq configuration-layer--elpa-archives
+        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   )
 
 (defun dotspacemacs/user-config ()
@@ -327,10 +331,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   (global-set-key (kbd "s-/") 'company-complete)
   ;; for go indent bug see https://github.com/syl20bnr/spacemacs/issues/6520
   (remove-hook 'post-command-hook 'clean-aindent--check-last-point)
